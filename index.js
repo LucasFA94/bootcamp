@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
     res.send("This is the Home Page");
 })
 
+app.get("/r/:subreddit/:postId", (req, res) => {
+    const { subreddit, postId } = req.params;
+    res.send(`<h1>This is a Subreddit ${subreddit} on ${postId}</h1>`);
+})
+
 app.get("/cats", (req, res) => {
     res.send("Meow!!!!")
 })
