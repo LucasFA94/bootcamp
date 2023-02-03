@@ -18,6 +18,16 @@ app.get("/r/:subreddit/:postId", (req, res) => {
     res.send(`<h1>This is a Subreddit ${subreddit} on ${postId}</h1>`);
 })
 
+app.get("/search", (req, res) => {
+    const { q } = req.query;
+    if (!q) {
+        res.send("Q not found!!!!!")
+    } else {
+        res.send(`Q value = ${q}`);    
+    }
+    
+})
+
 app.get("/cats", (req, res) => {
     res.send("Meow!!!!")
 })
